@@ -21,9 +21,12 @@ class CSVUploadForm(BelongingToInstanceMixin, forms.Form):
 
 class ColorPickerForm(BelongingToInstanceMixin, forms.Form):
     background_color = forms.CharField()
-    second_color = forms.CharField()
-    read_more_color = forms.CharField()
-    header_img = forms.URLField()
+    second_color     = forms.CharField()
+    read_more_color  = forms.CharField()
+    """
+    @todo: Why do we have 2 places to change the header_img?
+    """
+    header_img       = forms.CharField()
 
     def __init__(self, instance, *args, **kwargs):
         super(ColorPickerForm, self).__init__(instance, *args, **kwargs)

@@ -3,9 +3,12 @@ from ddah_web.models import DDAHInstanceWeb
 from django.conf import settings
 
 class DDAHInstanceForm(forms.ModelForm):
-    header_img = forms.URLField(required=False)
+    """
+    @todo: Why do we have 2 places to change the header_img?
+    """
+    header_img   = forms.CharField(required=False)
     twitter_text = forms.CharField(required=False)
-    og_img = forms.URLField(required=False)
+    og_img       = forms.URLField(required=False)
 
     def __init__(self, *args, **kwargs):
         super(DDAHInstanceForm, self).__init__(*args, **kwargs)
