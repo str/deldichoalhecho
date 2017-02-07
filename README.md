@@ -54,7 +54,6 @@ cp project_site/local_settings.demo.py project_site/local_settings.py
 ```
 
 And then edit that file.
-```
 
 * Install migrations
 
