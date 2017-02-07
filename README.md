@@ -3,7 +3,12 @@ deldichoalhecho
 
 Deldichoalhecho is a promise tracker application.
 
-This is intended to be a django-app and also a site by itself that allows citizens to create promises made by an authority and keep track of their fulfillment, this project is inspired by deldichoalhecho.cl.
+This is intended to be a django-app and also a site by itself that allows 
+citizens to create promises made by an authority and keep track of their 
+fulfillment, this project is inspired by deldichoalhecho.cl.
+
+This version handles multi-instances. For a single instance version, see 
+https://github.com/ciudadanointeligente/check-it
 
 [![Build Status](https://travis-ci.org/ciudadanointeligente/deldichoalhecho.svg?branch=master)](https://travis-ci.org/ciudadanointeligente/deldichoalhecho)
 [![Coverage Status](https://coveralls.io/repos/ciudadanointeligente/deldichoalhecho/badge.png?branch=master)](https://coveralls.io/r/ciudadanointeligente/deldichoalhecho?branch=master)
@@ -19,6 +24,7 @@ The installation requires certain software to be installed in your machine
 - [Python](https://www.python.org/)
 - [virtualenv](https://pypi.python.org/pypi/virtualenv)
 - [virtualenvwrapper](https://pypi.python.org/pypi/virtualenvwrapper)
+- [Django 1.8](https://docs.djangoproject.com/en/1.8/)
 
 ## Steps
 
@@ -39,6 +45,15 @@ cd deldichoalhecho
 
 ```
 pip install -r requirements.txt
+```
+
+* Create your own config file. Here you can edit the configuration for your specific implementation
+
+```
+cp project_site/local_settings.demo.py project_site/local_settings.py 
+```
+
+And then edit that file.
 ```
 
 * Install migrations

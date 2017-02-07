@@ -29,8 +29,7 @@ ALLOWED_HOSTS = []
 SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 # Application definition
-
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +57,7 @@ INSTALLED_APPS = (
     'django_ace',
     'ddah_admin_section',
     'django_forms_bootstrap',
-)
+]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -239,6 +238,10 @@ if TESTING:
 CELERY_ALWAYS_EAGER = True
 # END DEFAULT SETTINGS
 try:
+    MY_APPS = None
     from local_settings import *
+    if MY_APPS:
+        INSTALLED_APPS += MY_APPS
 except ImportError:
     pass
+
