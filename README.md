@@ -3,11 +3,11 @@ deldichoalhecho
 
 Deldichoalhecho is a promise tracker application.
 
-This is intended to be a django-app and also a site by itself that allows 
-citizens to create promises made by an authority and keep track of their 
+This is intended to be a django-app and also a site by itself that allows
+citizens to create promises made by an authority and keep track of their
 fulfillment, this project is inspired by deldichoalhecho.cl.
 
-This version handles multi-instances. For a single instance version, see 
+This version handles multi-instances. For a single instance version, see
 https://github.com/ciudadanointeligente/check-it
 
 [![Build Status](https://travis-ci.org/ciudadanointeligente/deldichoalhecho.svg?branch=master)](https://travis-ci.org/ciudadanointeligente/deldichoalhecho)
@@ -31,14 +31,15 @@ The installation requires certain software to be installed in your machine
 * Clone the project
 
 ```
-git clone https://github.com/ciudadanointeligente/deldichoalhecho.git
+git clone https://github.com/ciudadanointeligente/deldichoalhecho.git ${destiny}
+cd ${destiny}
 ```
 
 * Create a virtualenv and enter the directory
 
 ```
-mkvirtualenv deldichoalhecho
-cd deldichoalhecho
+virtualenv virtualenv
+source virtualenv/bin/activate
 ```
 
 * Install the project requirements
@@ -50,7 +51,7 @@ pip install -r requirements.txt
 * Create your own config file. Here you can edit the configuration for your specific implementation
 
 ```
-cp project_site/local_settings.demo.py project_site/local_settings.py 
+cp project_site/local_settings.demo.py project_site/local_settings.py
 ```
 
 And then edit that file.
@@ -58,6 +59,7 @@ And then edit that file.
 * Install migrations
 
 ```
+python manage.py migrate auth
 python manage.py migrate
 ```
 
@@ -65,6 +67,12 @@ python manage.py migrate
 
 ```
 python manage.py collectstatic
+```
+
+* Create the admin user
+
+```
+python manage.py createsuperuser
 ```
 
 * Run server
